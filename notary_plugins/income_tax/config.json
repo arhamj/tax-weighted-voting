@@ -1,0 +1,31 @@
+{
+  "title": "Income Tax",
+  "description": "Notarize tax paid",
+  "steps": [
+    {
+      "title": "Visit IncomeTax ePortal",
+      "cta": "Go to https://eportal.incometax.gov.in/",
+      "action": "start"
+    },
+    {
+      "title": "Collect credentials",
+      "description": "Login to your account if you haven't already",
+      "cta": "Check cookies",
+      "action": "two"
+    },
+    {
+      "title": "Notarize tax paid by the user",
+      "cta": "Notarize",
+      "action": "three",
+      "prover": true
+    }
+  ],
+  "hostFunctions": ["redirect", "notarize"],
+  "cookies": ["eportal.incometax.gov.in"],
+  "requests": [
+    {
+      "url": "https://eportal.incometax.gov.in/iec/itrweb/auth/v0.1/returns/previous",
+      "method": "POST"
+    }
+  ]
+}
