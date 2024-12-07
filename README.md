@@ -12,7 +12,7 @@ Tax weighted voting is an application of the concept of weighted voting, where t
 
 ## Solution
 
-Tax weighted voting is a possible solution to these problems. In tax weighted voting, the weight of a voter is determined by the average tax slab they fall in based on their last 3 year's tax returns. This is also a step to help distribute the tax payer inequality in developing countries (3% of the population pays 97% of the income taxes in India and they aren't the ones making the higest income!).
+Tax weighted voting is a possible solution to these problems. In tax weighted voting, the weight of a voter is determined by the average tax slab they fall in based on their last 3 year's tax returns. This is also a step to help distribute the tax payer inequality in developing countries (3% of the population pays 97% of the income taxes in India and they aren't the ones making the highest income!).
 
 Technically, the following challenges need to be addressed:
 
@@ -40,7 +40,7 @@ As part of the hackathon the following components will be implemented:
 ## Project Structure
 
 1. `notary_plugins`: contains `income_tax` plugin for TLSNotary Browser Extension.
-2. TBA
+2. `voting`: contains a clone of MACI wrapper. incomplete.
 3. TBA
 
 ## Screenshots
