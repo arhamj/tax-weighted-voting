@@ -57,15 +57,23 @@ export function two() {
   })
 }
 
-export function parseResponse() {
-  console.log('Reached here #1')
+export function parseTaxDepositedResp() {
   const bodyString = Host.inputString()
   const params = JSON.parse(bodyString)
 
-  if (params.lastThreeYearsReturn) {
-    outputJSON(bodyString)
+  if (params.lastThreeYearsReturn && Array.isArray(params.lastThreeYearsReturn)) {
+    const revealed = params.lastThreeYearsReturn.map((entry) => {
+      const taxDeposited = `"TaxDeposited":"${entry.TaxDeposited}"`
+      const selectionStart = bodyString.indexOf(taxDeposited)
+      const selectionEnd = selectionStart + taxDeposited.length
+
+      return [bodyString.substring(0, selectionStart), bodyString.substring(selectionEnd, bodyString.length)]
+    })
+
+    // Output the revealed TaxDeposited data
+    Host.outputString(JSON.stringify(revealed))
   } else {
-    outputJSON(false)
+    Host.outputString(JSON.stringify(false))
   }
 }
 
@@ -80,7 +88,7 @@ export function three() {
   } else {
     const requestData = {
       ...params,
-      getSecretResponse: 'parseResponse',
+      getSecretResponse: 'parseTaxDepositedResp',
     }
 
     console.log('Request Data:', JSON.stringify(requestData, null, 2))
