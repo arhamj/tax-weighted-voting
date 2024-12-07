@@ -34,7 +34,7 @@ As part of the hackathon the following components will be implemented:
 | Component | Description                                                    | Status      |
 | --------- | -------------------------------------------------------------- | ----------- |
 | TLSNotary | Notarize the tax returns of a voter from the Income Tax Portal | Done        |
-| MACI      | Weighted voting                                                | Not Started |
+| MACI      | Weighted voting                                                | Started     |
 | Bridge    | Using the TLSNotary to gatekeep the MACI voting                | Not Started |
 
 ## Project Structure
